@@ -50,7 +50,7 @@ Data integrity: Data seperti user ID dan password disimpan secara privat (`_user
 - Extensibility: Sistem harus di design mudah  untuk melakukan  update, penambahan  fitur dengan mudah .
 - Serviceability: Masalah dalam sistem harus mudah didiagnosis dan di fix.
 - Configurability: pengizinan konfigurasi fitur yang mudah seperti peran pengguna, izin, dan pengaturan sistem.
-- ![UseCaseUTS](https://hackmd.io/_uploads/r1VOqNUZ0.jpg)
+- ![UseCaseUTS](./UseCaseUTS.jpg)
 
 ```mermaid
     classDiagram 
