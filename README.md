@@ -3,6 +3,8 @@ Nama: Steven Salvador Paembonan Nim: 422023029
 
 **Functionality**
 
+**Functionality**
+
 Authentication: Sistem memiliki fitur login yang memverifikasi user ID dan password.
 
 Capability: Sistem harus bisa digunakan oleh setiap role yang berbeda seperti mahasiswa (bisa melihat nilai, melihat pembelajaran), dosen (upload nilai, upload materi), admin (Menginformasikan tagihan), superadmin (Maintence sistem, update fitur)
@@ -50,7 +52,59 @@ Data integrity: Data seperti user ID dan password disimpan secara privat (`_user
 - Extensibility: Sistem harus di design mudah  untuk melakukan  update, penambahan  fitur dengan mudah .
 - Serviceability: Masalah dalam sistem harus mudah didiagnosis dan di fix.
 - Configurability: pengizinan konfigurasi fitur yang mudah seperti peran pengguna, izin, dan pengaturan sistem.
-- ![UseCaseUTS](./UseCaseUTS.jpg)
+
+**User Roles(Actor)**
+- Student(Mahasiswa)
+- Teacher(Dosen)
+- UAA
+- Library(Perpustakaan)
+- SuperAdmin(PTI/Pak Tubagus)
+
+**User Stories**
+1. User Story untuk Mahasiswa
+Sebagai seorang mahasiswa,
+Saya ingin bisa login ke sistem dengan ID pengguna dan password saya,
+Supaya saya dapat mengakses fasilitas dan informasi terkait dengan status akademis saya.
+Sebagai seorang mahasiswa,
+Saya ingin bisa mengunggah sertifikat kegiatan atau pelatihan yang saya ikuti,
+Supaya saya bisa mendapatkan poin softskills yang nantinya bisa berguna untuk keperluan evaluasi kompetensi.
+Sebagai seorang mahasiswa,
+Saya ingin bisa melihat kalender akademik dan kegiatan,
+Supaya saya dapat mengatur jadwal pribadi saya sejalan dengan kegiatan akademis.
+Sebagai seorang mahasiswa,
+Saya ingin bisa mengirim e-ticket untuk melaporkan masalah atau permintaan bantuan,
+Supaya masalah saya bisa segera ditanggapi oleh admin atau dosen yang relevan.
+
+2. User Story untuk Dosen
+Sebagai seorang dosen,
+Saya ingin bisa login ke sistem,
+Supaya saya bisa mengakses dan mengelola informasi terkait dengan mahasiswa, seperti nilai, kehadiran, dan jadwal mengajar.
+Sebagai seorang dosen,
+Saya ingin bisa mengunggah nilai mahasiswa,
+Supaya mahasiswa bisa melihat performa akademis mereka secara real-time.
+Sebagai seorang dosen,
+Saya ingin bisa memperbarui absensi mahasiswa,
+Supaya dapat dipastikan bahwa mahasiswa mengikuti kelas sesuai dengan ketentuan akademik.
+
+3. User Story untuk Admin Universitas
+Sebagai seorang admin (SuperAdmin),
+Saya ingin bisa menerima dan menanggapi e-ticket yang dikirimkan oleh mahasiswa atau dosen,
+Supaya saya bisa cepat menyelesaikan masalah atau permintaan yang ada dalam universitas.
+
+4. User Story untuk Staff Perpustakaan
+Sebagai staff perpustakaan,
+Saya ingin bisa login ke sistem perpustakaan,
+Supaya saya dapat mengelola inventaris buku dan transaksi peminjaman.
+Sebagai staff perpustakaan,
+Saya ingin meminjamkan dan menerima kembali buku,
+Supaya pengelolaan buku tetap terjaga dan mahasiswa dapat memanfaatkan sumber belajar dengan efektif.
+
+5. User Story untuk Unit Akademik dan Kemahasiswaan (UAA)
+Sebagai anggota UAA,
+Saya ingin bisa login ke sistem,
+Supaya saya dapat mengelola data dan layanan yang berkaitan dengan kebutuhan akademik dan non-akademik mahasiswa.
+
+![UseCaseUTS](./UseCaseUTS.jpg)
 
 ```mermaid
     classDiagram 
@@ -148,6 +202,7 @@ User <|-- Library
 User <|-- Super Admin 
 
 Mahasiswa "n" -- "n" Course : enrolls in >
+SuperAdmin "n" -- "n" Payment : input >
 Course "1" -- "n" Grade : has > 
 Course "1" -- "n" Attendance : has >
 Dosen "1" -- "1" Course : teaches >
@@ -155,4 +210,3 @@ Mahasiswa "n" -- "n" Payment : makes >
 
 
 ```
-
